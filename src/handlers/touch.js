@@ -41,7 +41,7 @@ export default function(i) {
   }
 
   function applyTouchMove(differenceX, differenceY) {
-    element.scrollTop += differenceY;
+    element.scrollTop -= differenceY * (i.settings.wheelSpeed > 0 ? 1 : -1);
     element.scrollLeft -= differenceX;
 
     updateGeometry(i);
